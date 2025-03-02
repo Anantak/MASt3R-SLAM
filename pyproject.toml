@@ -13,7 +13,7 @@ dependencies = [
     "natsort",
     "pykdtree",
     "torchcodec==0.1",
-    "lietorch @ git+https://github.com/princeton-vl/lietorch.git",
+    "lietorch @ git+https://github.com/Anantak/lietorch.git",
     "plyfile",
 ]
 

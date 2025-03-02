@@ -4,6 +4,7 @@
 // Any modifications made are licensed under the CC BY-NC-SA 4.0 License.
 
 #include <torch/extension.h>
+
 #include <cuda.h>
 #include <cuda_runtime.h>
 #include <cuda_runtime.h>
@@ -799,7 +800,7 @@ std::vector<torch::Tensor> gauss_newton_points_cuda(
 
     // Termination criteria
     // Need to specify this second argument otherwise ambiguous function call...
-    delta_norm = torch::linalg::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
+    delta_norm = torch::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
     if (delta_norm.item<float>() < delta_thresh) {
       break;
     }
@@ -1216,7 +1217,7 @@ std::vector<torch::Tensor> gauss_newton_rays_cuda(
 
     // Termination criteria
     // Need to specify this second argument otherwise ambiguous function call...
-    delta_norm = torch::linalg::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
+    delta_norm = torch::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
     if (delta_norm.item<float>() < delta_thresh) {
       break;
     }
@@ -1626,7 +1627,7 @@ std::vector<torch::Tensor> gauss_newton_calib_cuda(
 
     // Termination criteria
     // Need to specify this second argument otherwise ambiguous function call...
-    delta_norm = torch::linalg::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
+    delta_norm = torch::linalg_norm(dx, std::optional<c10::Scalar>(), {}, false, {});
     if (delta_norm.item<float>() < delta_thresh) {
       break;
     }
